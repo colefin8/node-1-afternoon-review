@@ -7,6 +7,11 @@ const app = express();
 app.use(express.json());
 
 //*SERVER ENDPOINTS GO BELOW THIS
+app.get('/api/list', controller.getList);
+app.post('/api/list', controller.addToList);
+app.put('/api/list/:index', controller.editList);
+app.delete('/api/list/:index', controller.removeFromList)
+
 
 const port = 4040;
 app.listen(port || 4040, () => {
